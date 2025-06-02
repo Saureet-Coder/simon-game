@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <h1 id="level-title">Simon Game</h1>
+
+    <div id="rules-page">
+      <h2>Rules</h2>
+      <ul class="rules">
+        <li>Watch the sequence shown by the computer.</li>
+        <li>Repeat the exact sequence by clicking the buttons.</li>
+        <li>Each level adds one new color to the sequence.</li>
+        <li>If you make a mistake, the game ends.</li>
+      </ul>
+      <button id="start-btn">Start Game</button>
+    </div>
+
+    <div class="container hidden" id="game-board">
+      <button id="restart-btn" class="btn-control hidden">Restart Game</button>
+
+      <div class="row">
+        <div id="green" class="btn green"></div>
+        <div id="red" class="btn red"></div>
+      </div>
+      <div class="row">
+        <div id="yellow" class="btn yellow"></div>
+        <div id="blue" class="btn blue"></div>
+      </div>
+      <div class="footer">Made By Saureet</div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+  <script>
+    $("#start-btn").click(function () {
+      $("#rules-page").addClass("hidden");
+      $("#game-board").removeClass("hidden");
+      $(document).trigger("keypress");
+    });
+  </script>
+</body>
+
+</html>
